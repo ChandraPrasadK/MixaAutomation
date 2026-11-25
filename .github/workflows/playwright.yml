@@ -19,7 +19,7 @@ jobs:
       - run: npx playwright test --grep "@smoke|@regression"
         env:
           BASE_URL: ${{ vars.BASE_URL }}
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: reports
