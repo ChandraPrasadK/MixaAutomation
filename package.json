@@ -1,0 +1,43 @@
+{
+  "name": "mixa-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright + TypeScript test automation for the Mixa website",
+  "scripts": {
+    "test": "playwright test",
+    "report": "playwright show-report",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "typecheck": "tsc --noEmit",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:a11y": "playwright test --grep @a11y",
+    "test:localization": "playwright test --grep @localization",
+    "fetch:requirement": "tsx scripts/fetch-requirement.ts",
+    "push:testcases": "tsx scripts/push-testcases.ts",
+    "check:figma": "tsx scripts/check-figma.ts",
+    "sitecore:login": "tsx scripts/capture-sitecore-session.ts",
+    "servicenow:login": "tsx scripts/capture-servicenow-session.ts",
+    "format": "prettier --write components pages tests utils fixtures integrations scripts playwright.config.ts",
+    "format:check": "prettier --check components pages tests utils fixtures integrations scripts playwright.config.ts",
+    "check:ascii": "tsx scripts/check-ascii.ts",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm run check:ascii",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "guide:find": "tsx scripts/find-guide.ts"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.6",
+    "allure-playwright": "^3.14.0",
+    "dotenv": "^18.0.9",
+    "eslint": "^10.15.0",
+    "eslint-plugin-playwright": "^2.12.2",
+    "prettier": "^3.10.1",
+    "tsx": "^4.23.15",
+    "typescript": "6.0.3",
+    "typescript-eslint": "^8.74.0"
+  }
+}

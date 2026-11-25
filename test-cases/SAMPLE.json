@@ -1,0 +1,10 @@
+[
+  {
+    "name": "PDP gallery shows images",
+    "description": "Requirement: SAMPLE-1. Gallery is visible with at least one image.",
+    "steps": [
+      { "description": "Open a product detail page", "expected": "The product gallery is visible" },
+      { "description": "Select the second thumbnail", "expected": "The main image changes" }
+    ]
+  }
+]
